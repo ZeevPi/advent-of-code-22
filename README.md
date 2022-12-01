@@ -1,8 +1,36 @@
-# 🎄🎁🎄 [Advent of Code 2022](https://adventofcode.com/2022) 🎄🎁🎄
+# 🎄🎁🎄 Advent of Code 2022 🎄🎁🎄
 
-Here are my solutions for the "Advent of Code 2022".
+Here are my solutions for the [Advent of Code 2022](https://adventofcode.com/2022) challenges.
 
-## My Solutions
+## Installation
+
+Clone the repo:
+
+```
+git clone https://github.com/ZeevPi/advent-of-code-22.git
+cd advent-of-code-22
+```
+
+Compile the code using maven:
+
+```
+mvn clean package
+```
+
+## Run
+
+Place your input in the respective **_input_day_xx.txt_** file in the [resources](src/main/resources) folder.<br>
+Afterwards start the program with
+
+```
+mvn exec:java
+```
+
+## Languages used:
+
+- Kotlin
+
+## My results
 
 | Day | Stars | Title                                                   | Part 1 | Part 2 | Language                                                                                                                               |
 |-----|:-----:|---------------------------------------------------------|--------|--------|----------------------------------------------------------------------------------------------------------------------------------------|
@@ -31,8 +59,3 @@ Here are my solutions for the "Advent of Code 2022".
 | 23  |       |                                                         |        |        |                                                                                                                                        |
 | 24  |       |                                                         |        |        |                                                                                                                                        |
 | 25  |       |                                                         |        |        |                                                                                                                                        |
-
-## Description
-
-For results, run the Main and enter the number of the day. The input data can be found in
-the [resources](src/main/resources).
