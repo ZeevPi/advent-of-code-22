@@ -1,6 +1,9 @@
 import days.*
 
-val DAYS: Map<Int, Day> = mapOf(Pair(1, Day01()))
+val DAYS: Map<Int, Day> = mapOf(
+    Pair(1, Day01()),
+    Pair(2, Day02())
+)
 
 fun main() {
     println("Hi there! Please enter the number of the day to get the appropriate solution: ")

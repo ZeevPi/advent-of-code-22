@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Assertions.*
  */
 internal class Day01Test {
 
-    val day = Day01()
+    private val day = Day01()
 
     @Test
     fun part1() {
