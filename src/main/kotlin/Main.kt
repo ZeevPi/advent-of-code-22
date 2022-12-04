@@ -2,7 +2,9 @@ import days.*
 
 val DAYS: Map<Int, Day> = mapOf(
     Pair(1, Day01()),
-    Pair(2, Day02())
+    Pair(2, Day02()),
+    Pair(3, Day03()),
+    Pair(4, Day04())
 )
 
 fun main() {
