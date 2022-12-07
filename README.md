@@ -40,3 +40,4 @@ mvn exec:java
 | 4   | 🌟 🌟 | [Camp Cleanup](https://adventofcode.com/2022/day/4)            | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day04.kt) |
 | 5   | 🌟 🌟 | [Supply Stacks](https://adventofcode.com/2022/day/5)           | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day05.kt) |
 | 6   | 🌟 🌟 | [Tuning Trouble](https://adventofcode.com/2022/day/6)          | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day06.kt) |
+| 7   | 🌟 🌟 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day07.kt) |
