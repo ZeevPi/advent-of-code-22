@@ -42,3 +42,4 @@ mvn exec:java
 | 6   | 🌟 🌟 | [Tuning Trouble](https://adventofcode.com/2022/day/6)          | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day06.kt) |
 | 7   | 🌟 🌟 | [No Space Left On Device](https://adventofcode.com/2022/day/7) | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day07.kt) |
 | 8   | 🌟 🌟 | [Treetop Tree House](https://adventofcode.com/2022/day/8)      | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day08.kt) |
+| 9   | 🌟 🌟 | [Rope Bridge](https://adventofcode.com/2022/day/9)             | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day09.kt) |
