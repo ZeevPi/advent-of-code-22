@@ -1,8 +1,7 @@
 package days
 
-import utils.day11.Monkey
 import utils.FileReader
-
+import utils.day11.Monkey
 import kotlin.math.floor
 import kotlin.math.roundToInt
 
@@ -13,34 +12,46 @@ import kotlin.math.roundToInt
  */
 class Day11 : ADay(11) {
     override fun part1(): Number {
+        val monkeyByName = getMonkeys()
+
+        (1..20).forEach { _ ->
+            simulateRound(monkeyByName) { x -> floor(x / 3.0).roundToInt() }
+        }
+
+        return getMonkeyBusinessLevel(monkeyByName)
+    }
+
+    override fun part2(): Any {
+        val monkeyByName = getMonkeys()
+
+        (1..10000).forEach { _ ->
+            simulateRound(monkeyByName)
+        }
+
+        return getMonkeyBusinessLevel(monkeyByName)
+    }
+
+    private fun getMonkeys(): Map<Int, Monkey> {
         val monkeyByName = FileReader.readLinesFromResource(inputFile())
             .filter { it.isNotBlank() }
             .chunked(6) {
                 Monkey.parseMonkey(it)
             }.associateBy { it.name }
-
-        (1..20).forEach { _ ->
-            simulateRound(monkeyByName)
-            println(monkeyByName.values)
-        }
-
-        return monkeyByName.values
-            .map { it.inspectedItems }
-            .sortedDescending()
-            .slice(0..1)
-            .reduce { acc, i -> acc * i }
+        return monkeyByName
     }
 
-    override fun part2(): Any {
-        TODO()
-    }
+    private fun getMonkeyBusinessLevel(monkeys: Map<Int, Monkey>): Long = monkeys.values
+        .map { it.inspectedItems }
+        .sortedDescending()
+        .slice(0..1)
+        .fold(1L) { acc, i -> acc * i }
 
-    private fun simulateRound(monkeys: Map<Int, Monkey>) {
+    private fun simulateRound(monkeys: Map<Int, Monkey>, worryLevelReducer: ((Int) -> Int)? = null) {
         (0 until monkeys.size).forEach {
             val monkey = monkeys[it]
             while (monkey!!.hasItems()) {
-                val item = monkey.inspectItem { i -> floor(i / 3.0).roundToInt() }
-                monkeys[monkey.test(item)]!!.receiveItem(item)
+                val item = monkey.inspectItem()
+                monkeys[monkey.test(item, worryLevelReducer)]!!.receiveItem(item)
             }
         }
     }

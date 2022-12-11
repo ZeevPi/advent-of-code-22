@@ -7,9 +7,9 @@ package utils.day11
  */
 class Monkey private constructor(
     val name: Int,
-    private val items: ArrayDeque<Int>,
-    private val operation: (Int) -> Int,
-    val test: (Int) -> Int
+    private val items: ArrayDeque<Item>,
+    private val operation: MonkeyOperation,
+    val test: (Item, ((Int) -> Int)?) -> Int
 ) {
 
     companion object {
@@ -22,21 +22,23 @@ class Monkey private constructor(
             val items = if (Regex("\\s+Starting items:.*").matches(defs[1]))
                 Regex("\\d+").findAll(defs[1])
                     .map { it.groupValues[0] }
-                    .map { it.toInt() }
+                    .map { Item(it.toInt()) }
                     .toList()
             else listOf()
 
-            val operation: (Int) -> Int = Regex("\\s+Operation: new = (old|\\d+) ([+*-/]) (old|\\d+)").find(defs[2])
-                ?.groupValues
-                ?.drop(1)
-                ?.let { createOperation(it) }
-                ?: { -1 }
+            val operation: MonkeyOperation =
+                Regex("\\s+Operation: new = (old|\\d+) ([+*-/]) (old|\\d+)").find(defs[2])
+                    ?.groupValues
+                    ?.drop(1)
+                    ?.let { MonkeyOperation(it[0], it[2], it[1]) }
+                    ?: throw Exception("Can not parse monkey operation")
 
             val testCond: Int = parseGroupedIntFromString("\\s+Test: divisible by (\\d+)", defs[3])
             val testIfTrue: Int = parseGroupedIntFromString("\\s+If true: throw to monkey (\\d+)", defs[4])
             val testIfFalse: Int = parseGroupedIntFromString("\\s+If false: throw to monkey (\\d+)", defs[5])
 
-            val test: (Int) -> Int = { x -> if (x % testCond == 0) testIfTrue else testIfFalse }
+            val test: (Item, ((Int) -> Int)?) -> Int =
+                { item, reducer -> if (item.isDivisibleBy(testCond, reducer)) testIfTrue else testIfFalse }
 
             return Monkey(name, ArrayDeque(items), operation, test)
         }
@@ -45,35 +47,21 @@ class Monkey private constructor(
             Regex(regex).find(s)
                 ?.groupValues?.get(1)?.toInt()
                 ?: orElseDefault
-
-        private fun createOperation(description: List<String>): (Int) -> Int {
-            val (f1, sign, f2) = description
-            return { x ->
-                val a = parseOpSymbol(f1, x)
-                val b = parseOpSymbol(f2, x)
-                when (sign) {
-                    "+" -> a + b
-                    "-" -> a - b
-                    "*" -> a * b
-                    else -> a / b
-                }
-            }
-        }
-
-        private fun parseOpSymbol(s: String, x: Int): Int = if ("old" == s) x else s.toInt()
     }
 
     var inspectedItems = 0
         private set
 
-    fun inspectItem(worryLevelManager: (Int) -> Int): Int {
+    fun inspectItem(): Item {
         inspectedItems++
-        return worryLevelManager(operation(items.removeFirst()))
+        val item = items.removeFirst()
+        item.addOperation(operation)
+        return item
     }
 
     fun hasItems() = items.isNotEmpty()
 
-    fun receiveItem(item: Int) = items.addLast(item)
+    fun receiveItem(item: Item) = items.addLast(item)
 
     override fun toString(): String {
         return "Monkey $name (#inspections=$inspectedItems): $items"
