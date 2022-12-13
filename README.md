@@ -46,3 +46,4 @@ mvn exec:java
 | 10  | 🌟 🌟 | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10)        | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day10.kt) |
 | 11  | 🌟 🌟 | [Monkey in the Middle](https://adventofcode.com/2022/day/11)    | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day11.kt) |
 | 12  | 🌟 🌟 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day12.kt) |
+| 13  | 🌟 🌟 | [Distress Signal](https://adventofcode.com/2022/day/13)         | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day13.kt) |
