@@ -3,7 +3,7 @@ import kotlin.reflect.full.primaryConstructor
 
 fun main() {
     println("Hi there! Please enter the number of the day to get the appropriate solution: ")
-    val input = readLine()!!
+    val input = readln()
     try {
         val dayNum = input.toInt()
         val day = Class.forName(String.format("days.Day%02d", dayNum)).kotlin.primaryConstructor!!.call() as Day
