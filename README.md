@@ -48,3 +48,5 @@ mvn exec:java
 | 12  | 🌟 🌟 | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day12.kt) |
 | 13  | 🌟 🌟 | [Distress Signal](https://adventofcode.com/2022/day/13)         | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day13.kt) |
 | 14  | 🌟 🌟 | [Regolith Reservoir](https://adventofcode.com/2022/day/14)      | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day14.kt) |
+| 15  | 🌟 🌟 | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15)   | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day15.kt) |
+| 16  | 🌟 🌟 | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16)   | [![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=Kotlin&logoColor=white)](src/main/kotlin/days/Day16.kt) |
